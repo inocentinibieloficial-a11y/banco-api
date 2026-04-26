@@ -1,4 +1,4 @@
-package Spring.web.sem.web.service;
+package com.Service;
 
 import java.io.IOException;
 import java.net.URI;
