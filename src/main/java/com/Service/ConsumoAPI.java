@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 package com.Service;
-=======
-package Spring.web.sem.web.service;
->>>>>>> 7c91075a7b7230583fe61cfc8eb58a45c9781d62
 
 import java.io.IOException;
 import java.net.URI;
