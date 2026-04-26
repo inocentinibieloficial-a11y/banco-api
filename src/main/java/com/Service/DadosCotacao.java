@@ -2,6 +2,8 @@ package com.Service;
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import java.time.LocalDate;
+
 @JsonIgnoreProperties(ignoreUnknown = true)
 public record DadosCotacao(
         @JsonAlias("compra") Double compra,
@@ -9,5 +11,5 @@ public record DadosCotacao(
         @JsonAlias("fechoAnterior") Double fechoAnterior,
         @JsonAlias("nome") String nome,
         @JsonAlias("moeda") String moeda,
-        @JsonAlias("dataAtualizacao") String dataAtualizacao
+        @JsonAlias("dataAtualizacao") LocalDate dataAtualizacao
 ) {}

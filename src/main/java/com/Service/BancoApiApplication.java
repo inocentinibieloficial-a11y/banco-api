@@ -1,4 +1,4 @@
-package com.BankInterInternational.banco_api;
+package com.Service;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
