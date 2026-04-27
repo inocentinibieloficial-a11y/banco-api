@@ -3,46 +3,83 @@ package com.Model;
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class DadosCotacoes {
 
-    @JsonAlias("compra")
+    @JsonAlias("bid")
     private Double compra;
 
-    @JsonAlias("venda")
+    @JsonAlias("ask")
     private Double venda;
 
-    @JsonAlias("fechoAnterior")
-    private Double fechamentoAnterior;
+    @JsonAlias("high")
+    private Double alta;
 
-    @JsonAlias("nome")
+    @JsonAlias("low")
+    private Double baixa;
+
+    @JsonAlias("name")
     private String nome;
 
-    @JsonAlias("dataAtualizacao")
-    private LocalDateTime dataAtualizacao;
+    @JsonAlias("create_date")
+    private String dataAtualizacao;
 
-    // Construtor vazio — OBRIGATÓRIO para o Jackson funcionar
-    public DadosCotacoes() {}
+    public DadosCotacoes() {
+    }
 
-    // Seu construtor original
-    public DadosCotacoes(Double compra, String nome,
-                         LocalDateTime dataAtualizacao, Double venda) {
+    public Double getCompra() {
+        return compra;
+    }
+
+    public void setCompra(Double compra) {
         this.compra = compra;
-        this.nome = nome;
-        this.dataAtualizacao = dataAtualizacao;
+    }
+
+    public Double getVenda() {
+        return venda;
+    }
+
+    public void setVenda(Double venda) {
         this.venda = venda;
     }
 
-    // ... todos os getters e setters que você já tem ...
+    public Double getAlta() {
+        return alta;
+    }
+
+    public void setAlta(Double alta) {
+        this.alta = alta;
+    }
+
+    public Double getBaixa() {
+        return baixa;
+    }
+
+    public void setBaixa(Double baixa) {
+        this.baixa = baixa;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getDataAtualizacao() {
+        return dataAtualizacao;
+    }
+
+    public void setDataAtualizacao(String dataAtualizacao) {
+        this.dataAtualizacao = dataAtualizacao;
+    }
 
     @Override
     public String toString() {
         return String.format(
-                "%-20s | Compra: R$ %.4f | Venda: R$ %.4f",
-                nome, compra, venda
+                "%s%nCompra: R$ %.4f%nVenda:  R$ %.4f%nAlta:   R$ %.4f%nBaixa: R$ %.4f%nAtualizado: %s",
+                nome, compra, venda, alta, baixa, dataAtualizacao
         );
     }
 }
